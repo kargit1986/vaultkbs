@@ -1,0 +1,9 @@
+{
+  "path" :
+  {
+    "secret/project1/dev/*" :
+    {
+      "capabilities" : ["read","create","update","list"]
+    }
+  }
+}

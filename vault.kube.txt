@@ -1,0 +1,17 @@
+
+ vault write auth/kubernetes/config \
+	 token_reviewer_jwt="$jwt_token" \
+	 kubernetes_host="$host" \
+	 kuberentes_ca_cert="$ca_crt"
+
+
+vault write auth/kubernetes/role/project1role1 \
+> bound_service_account_names=vault \
+> bound_service_account_namespaces=default \
+> policies=project1 \
+> ttl=10h
+
+
+
+
+ vault policy write project1 policy.json 
